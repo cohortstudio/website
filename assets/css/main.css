@@ -63,6 +63,7 @@ body {
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
   min-height: 100vh;
+  background: #f3f3f3;
 }
 
 header {
@@ -111,13 +112,6 @@ section.full {
   height: 100vh;
 }
 
-section.common {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 200px 0;
-  display: flex;
-}
-
 section.gradient {
   background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
 	background-size: 400% 400%;
@@ -126,7 +120,14 @@ section.gradient {
 	animation: Gradient 15s ease infinite;
 }
 
-section.right {
+section.common .inner {
+  margin: 0 auto;
+  padding-top: 200px;
+  display: flex;
+  max-width: 1200px;
+}
+
+section.right .inner {
   justify-content: flex-end;
 }
 
@@ -161,6 +162,11 @@ section.center .text-container {
   font-size: 18px;
   line-height: 2em;
   margin-bottom: 20px;
+  max-width: 350px;
+}
+
+section.center .text-container p {
+  max-width: 600px;
 }
 
 .text-container p em {
@@ -184,6 +190,22 @@ section.center .text-container {
   background-color: rgba(0, 0, 0, 0.2);
 }
 
+#btn-down {
+  position: absolute;
+  left: 50%;
+  bottom: 80px;
+  margin-left: -45px;
+  -webkit-animation: Bounce 2s infinite;
+  -moz-animation: Bounce 2s infinite;
+  animation: Bounce 2s infinite;
+  background-image: url('/assets/img/btn-down.svg');
+}
+
+#btn-contact {
+  margin: 0 auto;
+  background-image: url('/assets/img/btn-contact.svg');
+}
+
 #intro {
   position: relative;
   display: flex;
@@ -200,15 +222,8 @@ section.center .text-container {
   line-height: 1.2em;
 }
 
-#btn-down {
-  position: absolute;
-  left: 50%;
-  bottom: 80px;
-  margin-left: -45px;
-  -webkit-animation: Bounce 2s infinite;
-  -moz-animation: Bounce 2s infinite;
-  animation: Bounce 2s infinite;
-  background-image: url('/assets/img/btn-down.svg');
+#product {
+  background: url('/assets/img/product.png') calc(50% + 240px) -100px no-repeat;
 }
 
 #projects {
@@ -218,14 +233,43 @@ section.center .text-container {
   width: 800px;
 }
 
+#projects p {
+  max-width: 100%;
+}
+
 #projects div {
   display: flex;
-  padding: 20px 0;
 }
 
 #projects div img {
   margin-right: 20px;
   height: 30px;
+}
+
+#team {
+  background: url('/assets/img/team.png') calc(50% - 300px) -150px no-repeat;
+}
+
+#team .inner {
+  min-height: 1200px;
+}
+
+#network {
+  background: url('/assets/img/network.png') calc(50% - 100px) 0 no-repeat;
+}
+
+#network .inner {
+  padding-top: 0;
+  min-height: 1000px;
+}
+
+#pricing {
+  background: url('/assets/img/pricing.png') calc(50% - 100px) 200px no-repeat;
+}
+
+#pricing .inner {
+  padding-top: 100px;
+  min-height: 1000px;
 }
 
 #contact {
@@ -237,9 +281,5 @@ section.center .text-container {
 
 #contact p {
   width: 400px;
-}
-
-#btn-contact {
-  margin: 0 auto;
-  background-image: url('/assets/img/btn-contact.svg');
+  margin: 0 auto 20px;
 }
