@@ -19,7 +19,7 @@ html
 
     main
       section#intro.full.gradient
-        h1 We help startups test new ideas
+        h1 We help startups <span class='typed'></span>
         a.button#btn-down(href='#product') Go down
 
       section#product.common.left
@@ -62,7 +62,13 @@ html
 
     script(src='https://unpkg.com/tippy.js@3/dist/tippy.all.min.js')
     script(src='https://unpkg.com/zenscroll@4.0.2/zenscroll-min.js')
+    script(src='https://cdn.jsdelivr.net/npm/typed.js@2.0.9')
     script.
       var defaultDuration = 777;
       var edgeOffset = 0;
       zenscroll.setup(defaultDuration, edgeOffset);
+
+      var typed = new Typed('.typed', {
+        strings: ['test new ideas', 'create unique brands', 'build beautiful products', 'grow amazing teams', 'establish massive empires'],
+        typeSpeed: 100
+      });
