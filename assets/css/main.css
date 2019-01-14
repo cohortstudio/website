@@ -109,7 +109,7 @@ main {
 }
 
 section.full {
-  height: 100vh;
+  min-height: 100vh;
 }
 
 section.gradient {
@@ -118,6 +118,10 @@ section.gradient {
 	-webkit-animation: Gradient 15s ease infinite;
 	-moz-animation: Gradient 15s ease infinite;
 	animation: Gradient 15s ease infinite;
+}
+
+section.common {
+  padding: 0 50px;
 }
 
 section.common .inner {
@@ -166,6 +170,7 @@ section.center .text-container {
 }
 
 section.center .text-container p {
+  margin: 0 auto 20px;
   max-width: 600px;
 }
 
@@ -216,34 +221,19 @@ section.center .text-container p {
 #intro h1 {
   font-size: 100px;
   text-align: center;
-  max-width: 1000px;
+  max-width: 1200px;
   text-transform: lowercase;
   color: #fff;
   line-height: 1.2em;
+  padding: 0 100px;
 }
 
 #product {
   background: url('/assets/img/product.png') calc(50% + 240px) -100px no-repeat;
 }
 
-#projects {
-  margin-top: 40px;
-  font-size: 18px;
-  line-height: 2em;
-  width: 800px;
-}
-
-#projects p {
-  max-width: 100%;
-}
-
-#projects div {
-  display: flex;
-}
-
-#projects div img {
-  margin-right: 20px;
-  height: 30px;
+#product .inner {
+  min-height: 750px;
 }
 
 #team {
@@ -272,6 +262,27 @@ section.center .text-container p {
   min-height: 1000px;
 }
 
+#projects {
+  margin-top: 40px;
+  margin-right: -400px;
+}
+
+#projects p {
+  max-width: 100%;
+  font-size: 16px;
+  line-height: 2em;
+}
+
+#projects div {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#projects div img {
+  margin: 0 20px 20px 0;
+  height: 30px;
+}
+
 #contact {
   display: flex;
   align-items: center;
@@ -279,7 +290,114 @@ section.center .text-container p {
   color: #fff;
 }
 
+#contact .text-container {
+  padding: 0 100px;
+}
+
 #contact p {
-  width: 400px;
+  max-width: 400px;
   margin: 0 auto 20px;
+}
+
+@media screen and (max-width: 1300px) {
+  section.right .inner {
+    justify-content: flex-start;
+  }
+
+  section.left .text-container,
+  section.right .text-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  section.left .text-container p,
+  section.right .text-container p {
+    margin: 0 auto 20px;
+    max-width: 600px;
+  }
+
+  #projects {
+    margin-right: 0;
+  }
+
+  #projects p {
+    text-align: left;
+  }
+
+  #product {
+    background-position: center top;
+    background-size: auto 400px;
+  }
+  
+  #product .inner {
+    padding-top: 350px;
+    min-height: 0;
+  }
+  
+  #team {
+    background-position: calc(50% - 150px) bottom;
+    background-size: auto 800px;
+  }
+  
+  #team .inner {
+    padding-top: 100px;
+    padding-bottom: 650px;
+    min-height: 0;
+  }
+  
+  #network {
+    background-position: calc(50% - 150px) bottom;
+    background-size: auto 600px;
+  }
+  
+  #network .inner {
+    padding-top: 100px;
+    padding-bottom: 550px;
+    min-height: 0;
+  }
+  
+  #pricing {
+    background-position: calc(50% - 50px) bottom;
+    background-size: auto 600px;
+  }
+  
+  #pricing .inner {
+    padding-top: 0;
+    padding-bottom: 550px;
+    min-height: 0;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  header {
+    justify-content: center;
+  }
+
+  header nav {
+    display: none;
+  }
+
+  #intro h1 {
+    font-size: 60px;
+    padding: 0 50px;
+  }
+
+  .text-container h2 {
+    font-size: 40px;
+  }
+
+  #contact .text-container {
+    padding: 0 50px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  #intro h1 {
+    font-size: 50px;
+  }
+
+  .text-container h2 {
+    font-size: 35px;
+  }
 }
